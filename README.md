@@ -211,17 +211,17 @@ donde no, la mayoría del tiempo un objeto de alto nivel será suficiente como a
 Dado que JavaScript permite crear objetos sobre la marcha, sin la necesidad de montones
 de código repetitivo de clases, puedes usar un objeto si te encuentras en la situación de necesitar muchos argumentos.
 
-Para que las propiedades que espera la función sean obvias, puedes usar la sintaxis de destructuracinó
+Para que las propiedades que espera la función sean obvias, puedes usar la sintaxis de destructuración
 de ES2015/ES6. Esto tiene algunas ventajas:
 
-1. When someone looks at the function signature, it's immediately clear what
-properties are being used.
-2. Destructuring also clones the specified primitive values of the argument
-object passed into the function. This can help prevent side effects. Note:
+1. Cuando alguien mire la definición de la función, inmediatamente es claro
+que propiedades se están usando.
+2. La destructuración también clona los valores primitivos especificados del objeto
+del argumento qué está siendo pasado a la función. Esto puede ayudar a prevenir efectos no deseados. Nota:
 objects and arrays that are destructured from the argument object are NOT
 cloned.
-3. Linters can warn you about unused properties, which would be impossible
-without destructuring.
+3. los linters pueden advertirte sobre propiedades que no están siendo usadas, lo que sería imposible sin
+destructuración.
 
 **Mal:**
 ```javascript
@@ -246,12 +246,12 @@ t```
 **[⬆ volver al inicio](#table-of-contents)**
 
 
-### Functions should do one thing
-This is by far the most important rule in software engineering. When functions
-do more than one thing, they are harder to compose, test, and reason about.
-When you can isolate a function to just one action, they can be refactored
-easily and your code will read much cleaner. If you take nothing else away from
-this guide other than this, you'll be ahead of many developers.
+### Las funciones deben hacer solo una cosa
+Esta es por lejos la regla más importante en la ingeniería de software. Cuando las funciones
+hacen más de una cosa, son más difíciles de componer, probar, y pensar en ellas.
+Cuando puedes aislar la función a una sola acción, estas pueden ser reconstruídas
+fácilmente y tu código será más limpio. Si te llevas solamente esto
+de esta guía, ya estarás adelante de muchos desarrolladores.
 
 **Mal:**
 ```javascript
@@ -280,7 +280,7 @@ function isClientActive(client) {
 ```
 **[⬆ volver al inicio](#table-of-contents)**
 
-### Function names should say what they do
+### Los nombres de las funciones deben decir lo que hacen
 
 **Mal:**
 ```javascript
@@ -305,10 +305,9 @@ addMonthToDate(1, date);
 ```
 **[⬆ volver al inicio](#table-of-contents)**
 
-### Functions should only be one level of abstraction
-When you have more than one level of abstraction your function is usually
-doing too much. Splitting up functions leads to reusability and easier
-testing.
+### Las funciones deben ser solamente un nivel de abstracción
+cuando tienes más de un nivel de abstracción tu función usualmente
+está haciendo demasiado. Dividir las funciones hace posible la reusabilidad y hace más fácil las pruebas.
 
 **Mal:**
 ```javascript
@@ -373,27 +372,27 @@ function parseBetterJSAlternative(code) {
 ```
 **[⬆ volver al inicio](#table-of-contents)**
 
-### Remove duplicate code
-Do your absolute best to avoid duplicate code. Duplicate code is bad because it
-means that there's more than one place to alter something if you need to change
-some logic.
+### Remueve el código duplicado
+Haz lo mejor que puedas para evitar el código duplicado. El código duplicado es malo porque
+significa que hay más de un lugar donde modificar algo si necesitas cambiar algo
+en la lógica.
 
-Imagine if you run a restaurant and you keep track of your inventory: all your
-tomatoes, onions, garlic, spices, etc. If you have multiple lists that
-you keep this on, then all have to be updated when you serve a dish with
-tomatoes in them. If you only have one list, there's only one place to update!
+Imagina que eres el dueño de un restaurante y llevas el control de tu inventario: todos tus
+tomates, cebollas, ajos, especias, etc. Si tienes múltiples listas en las que
+mantienes esto, entonces todas tienen que ser actualizadas cuando sirvas un plato que lleve
+tomates. Si solo tienes una lista, solo hay que actualizar en un lugar!
 
-Oftentimes you have duplicate code because you have two or more slightly
-different things, that share a lot in common, but their differences force you
-to have two or more separate functions that do much of the same things. Removing
-duplicate code means creating an abstraction that can handle this set of
-different things with just one function/module/class.
+De vez en cuando tienes código duplicado porque tienes dos o más cosas
+que son ligeramente diferentes, que comparten mucho en común, pero sus diferencias
+hacen necesario tener dos o más funciones separadas, que hacen en mayor parte las mismas cosas. Remover
+código duplicado sinifica crear una abstracción que pueda manejar ese conjunto
+de cosas diferentes con solo una función/módulo/clase.
 
-Getting the abstraction right is critical, that's why you should follow the
-SOLID principles laid out in the *Classes* section. Bad abstractions can be
-worse than duplicate code, so be careful! Having said this, if you can make
-a good abstraction, do it! Don't repeat yourself, otherwise you'll find yourself
-updating multiple places anytime you want to change one thing.
+Realizar la abstracción de buena manera es crítico, es por eso que se deben seguir
+los principios SOLID establecidos en la sección *Clases* . Las malas abstracciones pueden ser
+peores que el código duplicado, así que se cuidadoso! Habiendo dicho esto, si puedes hacer
+una buena abstracción, hazla! No seas repetitivo, sino te encontrarás
+actualizando en múltiples lugares cada vez que quieras hacer algún cambio.
 
 **Mal:**
 ```javascript

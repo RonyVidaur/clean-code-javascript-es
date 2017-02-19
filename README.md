@@ -452,7 +452,7 @@ function showEmployeeList(employees) {
 ```
 **[⬆ volver al inicio](#table-of-contents)**
 
-### Set default objects with Object.assign
+### Asigna objetos por defecto con Object.assign
 
 **Mal:**
 ```javascript
